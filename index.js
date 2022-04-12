@@ -6,7 +6,7 @@ const port = 3000
 //Get api
 app.get('/', async (req, res) => {
   //controller for crawler
-  let data = await crawler.getReviews();
+  let data = await crawler.getReviews(req.query.url);
   res.send(JSON.stringify(data));
 })
 

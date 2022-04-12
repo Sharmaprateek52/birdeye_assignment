@@ -3,9 +3,9 @@ const axios = require("axios");
 var beautify = require("json-beautify");
 const fs = require("fs");
 
-const getReviews = async () => {
+const getReviews = async (url) => {
   try {
-    const endPoint = "https://www.tigerdirect.com/applications/SearchTools/item-details.asp?EdpNo=640254&CatId=3";
+    const endPoint = url;
     const fetchPromise = axios({ method: "get", url: endPoint });
     const timeOutPromise = new Promise((resolve, reject) => {
       setTimeout(() => {
